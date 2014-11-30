@@ -1,0 +1,25 @@
+<html>
+<head>
+	
+</head>
+<body>
+	<script src="https://cdn.socket.io/socket.io-1.2.1.js"></script>
+	<script type="text/javascript">
+		var socket = io('http://localhost:3000');
+		socket.on('test', function(data) { 
+			console.log(data);
+			document.body.innerHTML += JSON.stringify(data) + "</br>";
+		});
+		socket.emit('Get_Value_Open', { com_port: 'COM7', event_name: 'test' });
+		function changeType() {
+			socket.emit('Change_Config', { com_port: 'COM7', type: 'Chromameter', model: '300' });
+		}
+
+		function getValue() {
+			socket.emit('Get_Value', { com_port: 'COM7' });
+		}
+	</script>
+	<button onclick="changeType()">Change Type</button>
+	<button onclick="getValue()">Get Value</button>
+</body>
+</html>

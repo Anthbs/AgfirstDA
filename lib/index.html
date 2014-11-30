@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		function bodyOnLoad(){
+			var agfirstda = require('./agfirstda.js');			
+			agfirstda.setup();
+			window.location.assign('http://localhost:8081/index.html');
+		}
+	</script>
+</head>
+<body onload="bodyOnLoad()">
+	<h1>
+		Loading...
+	</h1>	
+</body>
+</html>
