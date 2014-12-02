@@ -1,0 +1,104 @@
+// _navbar.scss
+
+@import "../../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_navbar";
+
+.navbar-default {
+border: 0;
+	background-color: #444;
+}
+
+#menu-header-primary {
+	top: $body-top-border; /* Offset for body border */
+	border: 0;
+	color: #eee;
+	height: $header-primary-height-min;
+}
+
+#menu-header-primary .navbar-nav > li {
+	line-height: 28px;
+	padding: 10px 15px;
+}
+
+#menu-header-primary .navbar-collapse {
+	border-top: 1px solid #222;
+}
+
+#menu-header-account {
+	background: #333;
+	padding: 0;
+}
+
+#menu-header-account .nav {
+	margin: 0;
+	//margin-left: 50px;
+	background: #444;
+	border-top: 1px solid #555;
+}
+
+#menu-header-account .clock {
+	color: #999;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 20px;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+	background: #333;
+}
+
+.navbar-default .navbar-nav > li > a  {
+	color: #eee;
+	padding: 0;
+	line-height: 28px;
+}
+
+.navbar-default .navbar-brand {
+	padding: 10px;
+	line-height: 30px;
+	height: $header-primary-height-min;
+	background: #333;
+	width: $application-dashboard-sidebar-min;
+	text-align: center;
+}
+
+.navbar-default .navbar-brand .logo {
+	height: ($header-primary-logo-height / 2);
+	width: ($header-primary-logo-width /2);
+}
+
+@media (min-width: 768px) {
+
+	#menu-header-primary .navbar-collapse {
+		border-top: 0;
+	}
+
+	.navbar-default .navbar-brand {
+	//	width: 100px;
+	}
+
+	#menu-header-account {
+		background: #444;
+	}
+}
+
+@media (min-width: 979px) {
+
+	#menu-header-primary {
+		height: $header-primary-height-max;
+	}
+
+	#menu-header-primary .navbar-collapse {
+		border: 0;
+	}
+
+	.navbar-default .navbar-brand {
+		height: $header-primary-height-max;
+		width: $application-dashboard-sidebar-max;
+	}
+
+	.navbar-default .navbar-brand .logo {
+		height: $header-primary-logo-height;
+		width: $header-primary-logo-width;
+	}
+
+}

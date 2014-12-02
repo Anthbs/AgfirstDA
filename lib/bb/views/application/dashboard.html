@@ -1,0 +1,52 @@
+<!-- dashboard.html -->
+
+<div class="row">
+	<section id="dashboard" role="dashboard">
+		<header>
+			<h1>Dashboard</h1>
+		</header>
+		<div class="col-md-12">
+			<div class="row dashboard-panel">
+				<p>Select your workspace</p>
+				<ul class="dashboard-links">
+					<li class="col-sm-4">
+						<a href="sample_login" ui-sref="sample_login">
+							<header>
+								<h1><span class="glyphicon glyphicon-barcode"></span>Login</h1>
+							</header>
+							<aside>
+								<p>Login workspace enables a workstation to process only Sample logins.  Select this option when the workstation does not have any testing devices attached, or when the workstation is only logging Samples received by the lab.</p>
+								<span class="icon icon-proceed glyphicon glyphicon-chevron-right"></span>
+							</aside>
+						</a>
+					</li>
+					<li class="col-sm-4">
+						<a href="scan_sample" ui-sref="scan_sample">
+							<header>
+								<h1><span class="glyphicon glyphicon-stats"></span>Testing</h1>
+							</header>
+							<aside>
+								<p>The Testing workspace enables a workstation to conduct measurement capture for tests where a testing device is connected to your workstation.</p>
+								<span class="icon icon-proceed glyphicon glyphicon-chevron-right"></span>
+							</aside>
+						</a>
+					</li>
+					<li class="col-sm-4">
+						<a href="sample_login" ui-sref="sample_login">
+							<header>
+								<h1><span class="glyphicon glyphicon-repeat"></span>Flow Line</h1>
+							</header>
+							<aside>
+								<p>The Flowline workspace enables a workstation to process both a Sample login and testing for samples where devices are currently connected to the workstation.</p>
+								<span class="icon icon-proceed glyphicon glyphicon-chevron-right"></span>
+							</aside>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="row">
+
+			</div>
+		</div>
+	</section>
+</div>

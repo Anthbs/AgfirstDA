@@ -1,0 +1,30 @@
+#test-details {
+	padding: 55px 5px 10px 25px;
+}
+
+#test-details textarea {
+	height: 80px;
+}
+
+#test-measures {
+	text-align: center;
+	padding: 0 25px 10px 5px;
+}
+
+#container-selector {
+	margin: 10px;
+}
+
+#container-items {
+	width: 100%;
+	margin: 0 10px;
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#container-items tr:not(:first-child):hover {
+	color: rgb(255,255,255);
+	cursor: pointer;
+	background-color: rgb(51,122,183);
+}

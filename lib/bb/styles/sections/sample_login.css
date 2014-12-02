@@ -1,0 +1,25 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/sample_login\.scss}line{font-family:\000034}}
+.boxed {
+  border: 1px solid black;
+  height: 300px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/sample_login\.scss}line{font-family:\000038}}
+.shadow-box {
+  box-shadow: 10px 10px 5px #888888;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/sample_login\.scss}line{font-family:\0000311}}
+.samplogform {
+  padding: 10px !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/sample_login\.scss}line{font-family:\0000314}}
+.bigtext {
+  font-size: 12pt !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/sample_login\.scss}line{font-family:\0000317}}
+textarea {
+  resize: none;
+}

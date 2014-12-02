@@ -1,0 +1,40 @@
+.bg-light {
+	
+}
+
+.bg-dark {
+	background: rgba(25,25,25,1);    
+}
+
+#login {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 500;
+}
+
+#login .login-inner {
+	width: 100%;
+	height: 100%;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: translate3d(0,0,150px);
+	transform: translate3d(0,0,150px);
+}
+
+#login .login-content {
+	width: 660px;
+	height: 350px;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	margin: -175px 0 0 -330px;
+	color: #fff;
+	font-size: 18px;
+}
+
+.title-alternate {
+	color: #ffffff;
+}

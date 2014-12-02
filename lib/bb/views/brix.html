@@ -1,0 +1,60 @@
+<!-- brix.html -->
+
+<div class="row">
+	<section id="sample-tests" role="dashboard">
+		<header>
+			<h1>Brix</h1>
+		</header>
+		<div class="col-md-12">
+			<div class="row">
+
+	<div id="test-details" class="col-xs-3">
+		<div class="panel panel-primary">
+			<div class="panel-heading">Test Details</div>
+			<table class="table">
+				<tr>
+					<td>
+						<select class="form-control" ng-model="Context.SelectedCutter" ng-options="cutter.id as cutter.name for cutter in Context.BrixCutters">
+							<option value="">-- select cutter --</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<textarea class="form-control" ng-model="Context.CutterComments"></textarea>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div id="test-measures" class="col-xs-9">
+
+		<div id="container-selector" class="btn-group" ng-model="Context.SelectedContainer" bs-radio-group>
+			<label class="btn btn-primary" ng-repeat="container in GetTestContainers()" ng-click="SetCurrentContainer($index)">
+				<input type="radio" class="btn btn-primary" value="{{$index}}">
+				{{GetContainerTypeName()}} {{$index + 1}}
+			</label>
+		</div>
+
+		<div id="container-items" class="panel panel-primary">
+			<div class="panel-heading">{{GetContainerTypeName()}} {{GetCurrentContainer() + 1}}</div>
+			<table class="table">
+				<tr>
+					<th>{{GetTestItemTypeName()}} #</th>
+					<th ng-repeat="measureType in GetTestCaptureMeasures() track by $index">{{measureType}}</th>
+				</tr>
+				<tr ng-repeat="containerItem in GetCurrentContainerItems().items track by $index" ng-click="SetCurrentContainerItem($index)">
+					<td>{{(GetContainerTypeSize() * GetCurrentContainer()) + ($index + 1)}}</td>
+					<td ng-repeat="measureType in GetTestCaptureMeasures() track by $index">{{containerItem[$index]}}</td>
+				</tr>
+			</table>
+		</div>
+
+	</div>
+
+	<div class="col-lg-3 col-md-offset-7 button">
+		<button class="btn btn-primary fin" ng-click="FinishTest()">Finish</button>
+	</div>	
+
+</div>

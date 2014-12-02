@@ -1,0 +1,19 @@
+<!-- scan_sample.html -->
+
+<div class="row">
+	<section id="sample-tests" role="dashboard">
+		<header>
+			<h1>Scan Sample</h1>
+		</header>
+		<div class="col-md-12 single-entry-form">
+			<div class="row">
+				<div class="col-md-12">
+					<p>Scan your sample, or enter a unique Sample ID number </p>
+					<input type="text" ng-model="sample.id" ng-enter="next()" class="sample-input">
+					<br>
+					<button class="btn btn-success" ng-click="next()">Next</button>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

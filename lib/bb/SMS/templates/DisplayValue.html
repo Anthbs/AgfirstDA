@@ -1,0 +1,56 @@
+<form role="form">
+	<div class="form-header">
+    	<h2>Display Value</label>
+	</div>
+	<div class="form-group">
+    	<label>Action Name:</label>
+    	<div class="row">
+    		<div class="col-xs-12">
+    			<input type="text" ng-model="Tests.Selected.Action.id" tooltip="Unique name of action"  tooltip-trigger="focus" tooltip-placement="left" class="form-control">
+    		</div>
+    	</div>
+	</div>
+
+    <div class="form-group">
+        <label>Text:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <input class="form-control" type="text" ng-model="Tests.Selected.Action.params.text" tooltip="Text to display to user"  tooltip-trigger="focus" tooltip-placement="left">
+                </input>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Parameter:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.valueParam" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Parameter for value to be displayed"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose value parameter --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Next Action:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.nextAction" ng-change="Display.Functions.UpdateLines()" ng-options="action.id for action in Tests.AvailableActions  | notNull: 'id' track by action.id" tooltip="Action when user enters value successfully"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose next action --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Canceled Action:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.cancelAction" ng-change="Display.Functions.UpdateLines()" ng-options="action.id for action in Tests.AvailableActions  | notNull: 'id' track by action.id" tooltip="Action when user cancels the modal"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose cancel action --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</form>

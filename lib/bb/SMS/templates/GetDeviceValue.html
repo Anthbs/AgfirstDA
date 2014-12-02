@@ -1,0 +1,66 @@
+<form role="form">
+	<div class="form-header">
+    	<h2>Get Device Value</label>
+	</div>
+	<div class="form-group">
+    	<label>Action Name:</label>
+    	<div class="row">
+    		<div class="col-xs-12">
+    			<input type="text" ng-model="Tests.Selected.Action.id" tooltip="Unique name of action"  tooltip-trigger="focus" tooltip-placement="left" class="form-control">
+    		</div>
+    	</div>
+	</div>
+	
+    <div class="form-group">
+        <label>Device Type:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.deviceType" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Device to read value from"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose device type --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Result Key:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <input type="text" ng-model="Tests.Selected.Action.params.resultKey" tooltip="Key in result value is stored(Eg. 'value' for scale)"  tooltip-trigger="focus" tooltip-placement="left" class="form-control">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Parameter:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.deviceValueParameter" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Parameter for storing value(s) read from the device"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose parameter --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Next Action:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.nextAction" ng-change="Display.Functions.UpdateLines()" ng-options="action.id for action in Tests.AvailableActions | notNull: 'id' track by action.id" tooltip="Next action on successful completion of this action"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose next action --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Error Action:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.errorAction" ng-change="Display.Functions.UpdateLines()" ng-options="action.id for action in Tests.AvailableActions | notNull: 'id' track by action.id" tooltip="Error action on failed to read device value"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose error action --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</form>

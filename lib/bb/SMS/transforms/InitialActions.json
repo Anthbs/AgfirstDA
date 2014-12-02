@@ -1,0 +1,118 @@
+[
+    {
+        "id": "",
+        "x": 75,
+        "y": 10,
+        "type": "GetDeviceValue",
+        "params": {}
+    },
+    {
+        "id": "",
+        "x": 700,
+        "y": 10,
+        "type": "Repeat",
+        "params": {}
+    },
+    {
+        "id": "",
+        "x": 390,
+        "y": 10,
+        "type": "UserInput",
+        "params": {}
+    },
+    {
+        "id": "",
+        "x": 1000,
+        "y": 10,
+        "type": "Validate",
+        "params": {}
+    },
+    {
+        "id": "",
+        "x": 1300,
+        "y": 10,
+        "type": "Code",
+        "params": {}
+    },
+    {
+        "id": "",
+        "x": 1600,
+        "y": 10,
+        "type": "Math",
+        "params": {}
+    },
+    {
+        "id": "",
+        "x": 1900,
+        "y": 10,
+        "type": "DisplayValue",
+        "params": {}
+    },
+    {
+        "id": "",
+        "x": 75,
+        "y": 125,
+        "type": "Broadcast",
+        "params": {}
+    },
+    {
+        "id": "",
+        "x": 390,
+        "y": 125,
+        "type": "Listener",
+        "params": {}
+    },
+    {
+        "id": "",
+        "x": 700,
+        "y": 125,
+        "type": "ObjectManipulation",
+        "params": {
+            "objManiptype": "get",
+            "objValue": {
+                "value": "",
+                "isParam": ""
+            },
+            "keys": [],
+            "storeKeys": []
+        }
+    },
+    {
+        "id": "",
+        "x": 1000,
+        "y": 125,
+        "type": "StateMachine",
+        "params": {
+            "initialParameter": {},
+            "resultParameter": {}
+        }
+    },
+    {
+        "id": "",
+        "x": 1300,
+        "y": 125,
+        "type": "Start",
+        "params": {}
+    },
+    {
+        "id": "",
+        "x": 1600,
+        "y": 125,
+        "type": "End",
+        "params": {
+            "objectParameter": "",
+            "keys": []
+        }
+    },
+    {
+        "id": "",
+        "x": 1900,
+        "y": 125,
+        "type": "API",
+        "params": {
+            "url": "",
+            "keys": [],
+            "storeKeys": []
+        }
+    }
+]

@@ -1,0 +1,36 @@
+<div class="modal-header">
+    <h3 class="modal-title">{{header}}</h3>
+</div>
+
+<div class="modal-body">
+	<div class="row"> 
+		<h4 class="col-xs-12">{{actions[current_action].instruction}}</h4>
+	</div>
+	<div class="row"> 
+		<h4 class="col-xs-12" >L:{{measure.L}} C:{{measure.C}} h:{{measure.h}}</h4>
+	</div>
+	<div class="row">
+		<div class="col-xs-12" style="background-color:rgb(248, 245.6, 242);width:150px;height:150px;" ng-class="tile_status[0]">
+			
+		</div>
+	</div>
+	<div class="row"> 
+		<div class="col-xs-6" style="background-color:rgb(148, 160, 105);width:150px;height:150px;" ng-class="tile_status[1]">
+		</div>
+		<div class="col-xs-6" style="background-color:rgb(148, 170, 105);width:150px;height:150px;" ng-class="tile_status[2]">
+		</div>
+	</div>
+	<div class="row"> 	
+		<div class="col-xs-6" style="background-color:rgb(157, 144, 115);width:150px;height:150px;" ng-class="tile_status[3]">
+			
+		</div>
+		<div class="col-xs-6" style="background-color:rgb(171, 163, 77);width:150px;height:150px;" ng-class="tile_status[4]">
+		</div>
+	</div>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="actions[current_action].ok()" ng-show="actions[current_action].ok != null">OK</button>
+    <button class="btn btn-primary" ng-click="retry()" ng-show="actions[current_action].retry != null">Retry</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

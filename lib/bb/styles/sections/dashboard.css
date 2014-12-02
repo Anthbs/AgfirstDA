@@ -1,0 +1,61 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/dashboard\.scss}line{font-family:\000037}}
+#dashboard .dashboard-links {
+  list-style: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/dashboard\.scss}line{font-family:\0000311}}
+.dashboard-panel {
+  padding: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/dashboard\.scss}line{font-family:\0000316}}
+.dashboard-links li {
+  padding: 0;
+  color: #666;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/dashboard\.scss}line{font-family:\0000324}}
+.dashboard-links li:first-child {
+  border-left: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/dashboard\.scss}line{font-family:\0000328}}
+.dashboard-links li:last-child {
+  border-right: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/dashboard\.scss}line{font-family:\0000332}}
+#dashboard .dashboard-links a {
+  color: #666;
+  text-decoration: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/dashboard\.scss}line{font-family:\0000337}}
+#dashboard .dashboard-links a:hover {
+  background: #fff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/dashboard\.scss}line{font-family:\0000341}}
+#dashboard .dashboard-links header {
+  padding: 5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/dashboard\.scss}line{font-family:\0000346}}
+#dashboard .dashboard-links h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/dashboard\.scss}line{font-family:\0000357}}
+.dashboard-links aside {
+  padding: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/dashboard\.scss}line{font-family:\0000361}}
+.dashboard-links aside span {
+  color: #666;
+  display: block;
+  text-align: right;
+}

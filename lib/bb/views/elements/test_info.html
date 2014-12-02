@@ -1,0 +1,35 @@
+<ul id="test-info-items">
+	<li>
+		<div class="devices_box">
+			<h1>Connected Devices</h1>
+			<div ng-repeat="device in Devices" class="device" ng-class="{'calibration_required': device.calibration_required}">
+				<h4 class="text-center">{{device.type}}</h4>
+				<h4 class="text-center">{{device.model}}</h4>
+			</div>
+		</div>
+	</li>
+	<li>
+		<p><strong>Sample Details</strong></p>
+		<ul>
+			<li><span>Sample ID</span> {{Sample.SampleID}}</li>
+			<li><span>Variety</span>GK</li>
+			<li><span>Type</span>M</li>
+		</ul>
+	</li>
+	<li>
+		<p><strong>Test Details</strong></p>
+		<ul id="sample-tests" class="tests">
+			<li ng-repeat="testType in TestTypes" class="test" ng-class="{ 'complete': testType.complete, 'current': IsCurrent(testType), 'unavailable': testType.unavailable }">
+				<div class="test-details">
+					<a href="javascript:void(0)" ng-click="ChangeTest(testType)"><span class="glyphicon" ng-class="{ 'glyphicon-ok-sign': testType.complete, 'glyphicon-ban-circle': testType.unavailable }"></span> <strong>{{testType.name}}</strong>
+					<span class="test-status">Status: </span>
+					</a>
+					<div class="test-info">
+						Some additional info in here
+						<span class="test-remove">Remove</span>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</li>
+</ul>

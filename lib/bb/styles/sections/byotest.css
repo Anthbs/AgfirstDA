@@ -1,0 +1,13 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/byotest\.scss}line{font-family:\000031}}
+.byo_test_svg {
+  width: calc(100% - 250px);
+  height: 600px;
+  float: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/byotest\.scss}line{font-family:\000037}}
+.byo_test_right {
+  width: 250px;
+  text-align: center;
+  float: right;
+}

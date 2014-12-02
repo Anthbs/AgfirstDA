@@ -1,0 +1,93 @@
+// _application.globals.scss
+
+// Brand Elements
+
+body {
+	padding-top:65px;
+}
+
+// Core Globals
+
+body.fullscreen-dark {
+	background: $global-fullscreen-dark-rgb;
+}
+
+.fullscreen {
+	width: 100%;
+	height: 100%;
+}
+
+.bg-light {
+	
+}
+
+.bg-dark {
+	background: rgba(25,25,25,1);    
+}
+
+.hidden-small {
+	visibility: hidden;
+	display: none;
+}
+
+.hidden-medium {
+	visibility: hidden;
+	display: none;
+}
+
+h1.brand {
+	line-height: 75px;
+	display: inline-block;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin:14px 0 0 0;
+	text-shadow: 0 0 1px rgba(0,0,0,1);
+}
+
+span.logo {
+	vertical-align: top;
+	line-height: 75px;
+	height: 75px;
+	width: 75px;
+	background-image:   $global-company-logo;
+	background-repeat:no-repeat;
+	background-position:center center;
+	-o-background-size: 100% 100%, auto;
+	-moz-background-size: 100% 100%, auto;
+	-webkit-background-size: 100% 100%, auto;
+	background-size: 100% 100%, auto;
+	display: inline-block;
+	margin: 0;
+}
+
+@media (min-width: 767px) {
+	.affix,.affix-top {
+		position:fixed;
+	}
+
+	.hidden-small {
+		visibility: visible;
+		display: inline;
+	}
+}
+
+@media (min-width: 979px) {
+
+	.hidden-medium {
+		visibility: visible;
+		display: inline;
+	}
+
+	#midCol.affix-top {
+		position:fixed;
+		width:265px;
+		margin-right:10px;
+	  
+	}
+  
+  #midCol.affix {
+	  position:static;
+	  width:100%;
+  }
+
+}

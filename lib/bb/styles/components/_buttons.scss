@@ -1,0 +1,12 @@
+
+@import "../../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_buttons.scss";
+
+.login .btn-primary {
+	background-color: $global-primary-color-rgb;
+	border: 1px solid #333;
+	text-shadow: -1px -1px 1px #477013;
+}
+
+.login .btn-configure {
+	color: #333;
+}

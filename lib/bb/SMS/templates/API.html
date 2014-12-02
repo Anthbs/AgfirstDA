@@ -1,0 +1,141 @@
+<form role="form">
+	<div class="form-header">
+    	<h2>API</label>
+	</div>
+	<div class="form-group">
+    	<label>Action Name:</label>
+    	<div class="row">
+    		<div class="col-xs-12">
+    			<input type="text" ng-model="Tests.Selected.Action.id" tooltip="Unique name of action"  tooltip-trigger="focus" tooltip-placement="left" class="form-control">
+    		</div>
+    	</div>
+	</div>
+    <div>
+        <div class="form-group">
+	    	<label>URL:</label>
+	    	<div class="row">
+	    		<div class="col-xs-12">
+	    			<input type="text" ng-model="Tests.Selected.Action.params.url" tooltip="URL to call"  tooltip-trigger="focus" tooltip-placement="left" class="form-control">
+	    		</div>
+	    	</div>
+		</div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <button type="button" class="btn btn-primary btn-block" ng-model="Tests.Selected.Action.params.isGet" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
+                    Is Get(false = post)
+                </button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Object Parameter:</label>
+            <div class="row">
+                <div class="col-xs-12">
+                    <select class="form-control" ng-model="Tests.Selected.Action.params.objectParameter" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Parameter for object"  tooltip-trigger="focus" tooltip-placement="left">
+                        <option value="">-- choose object parameter --</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Get -->
+        <div class="form-group">
+            <label>Keys:</label>
+            <div class="row">
+                <div class="col-xs-12">
+                    <p class="input-group">
+                        <input type="text" ng-model="Tests.Temp.objKey.key" tooltip="Key in object" ng-show="!Tests.Temp.objKey.isParam" tooltip-trigger="focus" tooltip-placement="left" class="form-control" />
+                        <select class="form-control" ng-model="Tests.Temp.objKey.key" ng-show="Tests.Temp.objKey.isParam" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Parameter for object key"  tooltip-trigger="focus" tooltip-placement="left">
+                            <option value="">-- choose object parameter --</option>
+                        </select>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-primary" ng-model="Tests.Temp.objKey.isParam" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
+                                Is Variable
+                            </button>
+                            <button type="button" class="btn btn-success" ng-click="Tests.Functions.addKey(Tests.Selected.Action, Tests.Temp.objKey)"><i class="glyphicon glyphicon-plus"></i></button>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="row" ng-repeat="obj in Tests.Selected.Action.params.keys">
+                <div class="col-xs-12">
+                    <p class="input-group">
+                        <input type="text" ng-model="obj.key" tooltip="Key in object" ng-show="!obj.isParam" tooltip-trigger="focus" tooltip-placement="left" class="form-control" />
+                        <select class="form-control" ng-model="obj.key" ng-show="obj.isParam" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Parameter for object key"  tooltip-trigger="focus" tooltip-placement="left">
+                            <option value="">-- choose object parameter --</option>
+                        </select>
+                        <span class="input-group-btn">.
+                            <button type="button" class="btn btn-primary" ng-model="obj.isParam" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
+                                Is Variable
+                            </button>
+                            <button type="button" class="btn btn-danger" ng-click="Tests.Functions.removeKey(Tests.Selected.Action, obj)"><i class="glyphicon glyphicon-remove"></i></button>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Store In -->
+        <div class="form-group">
+            <label>Store Object Parameter:</label>
+            <div class="row">
+                <div class="col-xs-12">
+                    <select class="form-control" ng-model="Tests.Selected.Action.params.storeObjectParameter" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Object to store result"  tooltip-trigger="focus" tooltip-placement="left">
+                        <option value="">-- choose object parameter --</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Store Keys:</label>
+            <div class="row">
+                <div class="col-xs-12">
+                    <p class="input-group">
+                        <input type="text" ng-model="Tests.Temp.objStoreKey.key" tooltip="Key for store object" ng-show="!Tests.Temp.objStoreKey.isParam" tooltip-trigger="focus" tooltip-placement="left" class="form-control" />
+                        <select class="form-control" ng-model="Tests.Temp.objStoreKey.key" ng-show="Tests.Temp.objStoreKey.isParam" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Parameter for store object key"  tooltip-trigger="focus" tooltip-placement="left">
+                            <option value="">-- choose object parameter --</option>
+                        </select>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-primary" ng-model="Tests.Temp.objStoreKey.isParam" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
+                                Is Variable
+                            </button>
+                            <button type="button" class="btn btn-success" ng-click="Tests.Functions.addStoreKey(Tests.Selected.Action, Tests.Temp.objStoreKey)"><i class="glyphicon glyphicon-plus"></i></button>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="row" ng-repeat="obj in Tests.Selected.Action.params.storeKeys">
+                <div class="col-xs-12">
+                    <p class="input-group">
+                        <input type="text" ng-model="obj.key" tooltip="Key for store object" ng-show="!obj.isParam" tooltip-trigger="focus" tooltip-placement="left" class="form-control" />
+                        <select class="form-control" ng-model="obj.key" ng-show="obj.isParam" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Parameter for store object key"  tooltip-trigger="focus" tooltip-placement="left">
+                            <option value="">-- choose object parameter --</option>
+                        </select>
+                        <span class="input-group-btn">.
+                            <button type="button" class="btn btn-primary" ng-model="obj.isParam" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
+                                Is Variable
+                            </button>
+                            <button type="button" class="btn btn-danger" ng-click="Tests.Functions.removeStoreKey(Tests.Selected.Action, obj)"><i class="glyphicon glyphicon-remove"></i></button>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+
+  	<div class="form-group">
+    	<label>Next Action:</label>
+    	<div class="row">
+    		<div class="col-xs-12">
+    			<select class="form-control" ng-model="Tests.Selected.Action.params.nextAction" ng-change="Display.Functions.UpdateLines()" ng-options="action.id for action in Tests.AvailableActions | notNull: 'id' track by action.id" tooltip="Next action on successful completion of this action"  tooltip-trigger="focus" tooltip-placement="left">
+					<option value="">-- choose next action --</option>
+				</select>
+    		</div>
+    	</div>
+	</div>
+</form>

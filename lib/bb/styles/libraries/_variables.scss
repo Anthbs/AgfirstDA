@@ -1,0 +1,42 @@
+//* Globals
+
+$global-body-bg:							#fafafa;
+
+// Brand Inforamtion
+$global-company-logo:						url(/images/netlab_logo.png);
+
+// Currently set to the RGB value for Netlab Pantone 368B
+$global-primary-color-rgb:					rgb(120, 190,32);
+$global-primary-color-hex:					#78be20;
+
+$global-fullscreen-dark-hex:				#191919;
+$global-fullscreen-dark-rgb:				rgba(25, 25, 25, 1);
+
+//** `<input>` background color
+$input-bg:									#000;
+$input-bg-alternate:						#fff !default;
+
+//** Application Icon Variables
+$application-icon-color:					#000;
+
+//** UI Layout Elements
+$body-top-border:							5px;
+$body-top-border-color:						$global-primary-color-hex;
+
+$header-primary-height-min:					50px;
+$header-primary-height-max:					80px;
+
+$header-primary-logo-height:				60px;
+$header-primary-logo-width:					60px;
+
+$sidebar-dashboard-width-small:				50px;
+$sidebar-dashboard-width-max:				100px;
+
+$application-dashboard-sidebar-min:			50px;
+$application-dashboard-sidebar-max:			120px;
+
+$application-testarea-sidebar-min:			150px;
+$application-testarea-sidebar-max:			250px;
+
+@import "../../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_variables.scss";
+

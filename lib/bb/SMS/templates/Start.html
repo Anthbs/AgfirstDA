@@ -1,0 +1,63 @@
+<form role="form">
+	<div class="form-header">
+    	<h2>Start</label>
+	</div>
+	<div class="form-group">
+    	<label>Action Name:</label>
+    	<div class="row">
+    		<div class="col-xs-12">
+    			<input type="text" ng-model="Tests.Selected.Action.id" tooltip="Unique name of action"  tooltip-trigger="focus" tooltip-placement="left" class="form-control">
+    		</div>
+    	</div>
+	</div>
+	<div class="form-group">
+    	<label>Initial Parameters:</label>
+    	<div class="row">
+    		<div class="col-xs-6">
+    			<label>Name</label>
+    		</div>
+    		<div class="col-xs-6">
+    			<label>Value</label>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-xs-6">
+    			<input type="text" ng-model="Tests.Selected.Action.newParam.name" tooltip="Name of variable"  tooltip-trigger="focus" tooltip-placement="left" class="form-control" />
+    		</div>
+    		<div class="col-xs-6">
+    			<p class="input-group">
+	    			<input type="text" ng-model="Tests.Selected.Action.newParam.value" tooltip="Inital value of variable"  tooltip-trigger="focus" tooltip-placement="left" class="form-control" />
+	    			<span class="input-group-btn">
+	                	<button type="button" class="btn btn-success" ng-click="Tests.Functions.addInitialParameter()"><i class="glyphicon glyphicon-plus"></i></button>
+	              	</span>
+              	</p>
+    		</div>
+    	</div>
+        <div style="overflow-y:auto; height:150px; overflow-x: hidden">
+        	<div class="row" ng-repeat="param in Tests.Selected.Action.params.initial">
+        		<div class="col-xs-6">
+        			<input type="text" ng-model="param.name" tooltip="Name of variable"  tooltip-trigger="focus" tooltip-placement="left" class="form-control" />
+        		</div>
+        		<div class="col-xs-6">
+        			<p class="input-group">
+    	    			<input type="text" ng-model="param.value" tooltip="Inital value of variable"  tooltip-trigger="focus" tooltip-placement="left" class="form-control" />
+    	    			<span class="input-group-btn">
+    	                	<button type="button" class="btn btn-danger" ng-click="Tests.Functions.removeInitialParameter(param)"><i class="glyphicon glyphicon-remove"></i></button>
+    	              	</span>
+                  	</p>
+        		</div>
+        	</div>
+        </div>
+  	</div>
+
+  	<div class="form-group">
+    	<label>Next Action:</label>
+    	<div class="row">
+    		<div class="col-xs-12">
+    			<select class="form-control" ng-model="Tests.Selected.Action.params.nextAction" ng-change="Display.Functions.UpdateLines()" ng-options="action.id for action in Tests.AvailableActions | notNull: 'id' track by action.id" tooltip="Next action on successful completion of this action"  tooltip-trigger="focus" tooltip-placement="left">
+					<option value="">-- choose next action --</option>
+				</select>
+    		</div>
+    	</div>
+	</div>
+</form>

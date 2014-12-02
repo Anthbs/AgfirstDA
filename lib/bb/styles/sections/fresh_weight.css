@@ -1,0 +1,9 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/fresh_weight\.scss}line{font-family:\000031}}
+.reported {
+  color: green !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/fresh_weight\.scss}line{font-family:\000035}}
+.not_reported {
+  color: red !important;
+}

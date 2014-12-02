@@ -1,0 +1,35 @@
+<!-- bulk_weight.html -->
+
+<div class="row">
+	<section id="sample-tests" role="dashboard">
+		<header>
+			<h1>Bulk Weight - {{Test.Context.SampleID}}</h1>
+		</header>
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-lg-3">
+					<label>Bulk Weight(Kgs)</label>
+					<input type="text" ng-model="weight" class="form-control input" placeholder="Weight in KG" />
+				</div>
+				<div class="col-lg-3">
+					<label>No. of Fruit</label>
+					<input type="text" ng-model="numfruit" class="form-control input" placeholder="Total Furit" />
+				</div>
+				<div class="col-lg-3">
+					<label>No. of Fruit Undersize</label>
+					<input type="text" ng-model="numunder" class="form-control input" placeholder="Total Undersize Fruit" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-9">
+					<label>Notes</label>
+					<input type="text" ng-model="notes" class="form-control input" placeholder="No Notes" />
+				</div>
+			</div>
+			</form>
+			<div class="col-lg-3 col-md-offset-7 button">
+				<button class="btn btn-primary fin" ng-click="next()">Finish</button>
+			</div>
+		</div>
+	</section>
+</div>

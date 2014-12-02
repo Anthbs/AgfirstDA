@@ -1,0 +1,20 @@
+<!-- scan_sample.html -->
+
+<div class="row">
+	<section id="setup-devices" role="dashboard">
+		<header>
+			<h1>Device Setup</h1>
+		</header>
+		<div class="col-md-12">
+			<div ng-repeat="port in COMPorts" class="row">
+				<div class="col-xs-2">
+					{{port}}
+				</div>
+				<div class="col-xs-3">
+					<select ng-model="Devices[port]" style="width:100%" ng-options="dt.model group by dt.type for dt in DeviceTypes"> </select>
+				</div>
+				<button ng-click="SaveDeviceSettings(port, Devices[port].type, Devices[port].model, Devices[port].da_type)">Save</button>
+			</div>
+		</div>
+	</section>
+</div>

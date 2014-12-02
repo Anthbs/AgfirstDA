@@ -1,0 +1,56 @@
+// Application Icon settings
+
+.app-icon {
+	color:		$application-icon-color;
+}
+
+.list-centered {
+    margin: 0 auto;
+    width: -webkit-fit-content;
+       width: -moz-fit-content;
+            width: fit-content;
+}
+
+.list-centered li {
+	float: left;
+}
+
+.device-calibration-icons {
+	//display: table; /* for centering */
+	margin: 2em auto 0;
+	width: 100%;
+}
+
+#device-calibration-status {
+	list-style: none;
+	text-align: center;
+	//height: 80px;
+	padding: 0;
+}
+
+#device-calibration-status .app-icon {
+	border: 8px solid rgba(32, 32, 32, 1);
+	margin: 0 5px;
+	border-radius: 6em;
+	//width: 75px;
+	display: inline-block;
+	height: 75px;
+}
+
+.app-icon p {
+	margin: 0;
+	line-height: 59px;
+	padding: 0 16px;
+	font-weight: bold;
+	font-size: 40px;
+}
+
+#device-calibration-status .app-icon {
+	background: #eee;
+}
+
+#device-calibration-status .app-icon.calibrated {
+	color: #fff;
+	text-shadow: -1px -1px 2px #477013;
+	background: $global-primary-color-rgb;
+}

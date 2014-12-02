@@ -1,0 +1,21 @@
+// _application.hardware.scss
+
+dl.hardware {
+	padding: 5px;
+	background: rgba(50, 50, 50, 0.5);
+	float: left;
+	margin: 10px;
+}
+
+.hardware dt {
+	font-style: normal;
+	display: inline;
+}
+
+.hardware dd {
+	display: inline;
+}
+
+.workstation-info {
+	border: 1px solid #333;
+}

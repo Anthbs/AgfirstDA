@@ -1,0 +1,28 @@
+<section id="workstation" class="workstation-configure login bg-dark">
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <header>
+                <span class="logo"></span>
+                <h1 class="brand text-center title-alternate">Configuration</h1>
+            </header>
+        </div>
+
+        <div class="col-md-6 col-md-offset-3">
+            <!-- Simple Login -->
+            <form class="row">
+                <div class="form-group col-xs-12">
+                    <select class="form-control" ng-model="Workstation.Lab.id" ng-options="lab.id as lab.name for lab in Workstation.LabList">
+                        <option value="">-- Select Lab --</option>
+                    </select>
+                </div>
+                <div class="form-group col-xs-12">
+                    <input type="text" class="form-control" placeholder="Workstation Name" ng-model="Workstation.Name" required>
+                </div>
+                <div class="form-group col-xs-6">
+                    <button class="btn btn-primary btn-block col-xs-6" type="button" ng-click="setup();">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

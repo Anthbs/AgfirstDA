@@ -1,0 +1,74 @@
+<form role="form">
+	<div class="form-header">
+    	<h2>End</label>
+	</div>
+	<div class="form-group">
+    	<label>Action Name:</label>
+    	<div class="row">
+    		<div class="col-xs-12">
+                <input type="text" ng-model="Tests.Selected.Action.id" tooltip="Unique name of action"  tooltip-trigger="focus" tooltip-placement="left" class="form-control">
+    		</div>
+    	</div>
+	</div>
+
+    <div class="form-group">
+        <div class="form-group">
+                <label>Return Parameter:</label>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <select class="form-control" ng-model="Tests.Selected.Action.params.objectParameter" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Parameter for object"  tooltip-trigger="focus" tooltip-placement="left">
+                            <option value="">-- choose object parameter --</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <label>Keys:</label>
+            <div class="row">
+                <div class="col-xs-12">
+                    <p class="input-group">
+                        <input type="text" ng-model="objKey.key" tooltip="Key in object" ng-show="!objKey.isParam" tooltip-trigger="focus" tooltip-placement="left" class="form-control" />
+                        <select class="form-control" ng-model="objKey.key" ng-show="objKey.isParam" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Parameter for object key"  tooltip-trigger="focus" tooltip-placement="left">
+                            <option value="">-- choose object parameter --</option>
+                        </select>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-primary" ng-model="objKey.isParam" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
+                                Is Variable
+                            </button>
+                            <button type="button" class="btn btn-success" ng-click="addKey(Tests.Selected.Action, objKey)"><i class="glyphicon glyphicon-plus"></i></button>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="row" ng-repeat="obj in Tests.Selected.Action.params.keys">
+                <div class="col-xs-12">
+                    <p class="input-group">
+                        <input type="text" ng-model="obj.key" tooltip="Key in object" ng-show="!obj.isParam" tooltip-trigger="focus" tooltip-placement="left" class="form-control" />
+                        <select class="form-control" ng-model="obj.key" ng-show="obj.isParam" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Parameter for object key"  tooltip-trigger="focus" tooltip-placement="left">
+                            <option value="">-- choose object parameter --</option>
+                        </select>
+                        <span class="input-group-btn">.
+                            <button type="button" class="btn btn-primary" ng-model="obj.isParam" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
+                                Is Variable
+                            </button>
+                            <button type="button" class="btn btn-danger" ng-click="removeKey(Tests.Selected.Action, obj)"><i class="glyphicon glyphicon-remove"></i></button>
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="button" class="btn btn-primary" style="width:100%;" ng-model="Tests.Selected.Action.params.returnBool" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
+                        Returns Boolean
+                    </button>
+                </div>
+            </div>
+            <div class="row" ng-show="Tests.Selected.Action.params.returnBool == true">
+                <div class="col-xs-12">
+                    <button type="button" class="btn btn-primary" style="width:100%;" ng-model="Tests.Selected.Action.params.returnTrue" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
+                        Returns Success
+                    </button>
+                </div>
+            </div>
+        </div>
+</form>

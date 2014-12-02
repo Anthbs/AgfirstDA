@@ -1,0 +1,89 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/test_info\.scss}line{font-family:\000031}}
+#sample-tests {
+  padding: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/test_info\.scss}line{font-family:\000035}}
+.unavailable {
+  background-color: rgba(128, 128, 128, 0.5) !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/test_info\.scss}line{font-family:\000039}}
+.complete {
+  background-color: #8bc63f !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/test_info\.scss}line{font-family:\0000313}}
+.current {
+  background-color: rgba(255, 255, 0, 0.5) !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/test_info\.scss}line{font-family:\0000317}}
+.test {
+  display: inline-block;
+  background-color: white;
+  width: 100%;
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/test_info\.scss}line{font-family:\0000324}}
+.test a {
+  text-decoration: none;
+  color: #666;
+  padding: 5px;
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/test_info\.scss}line{font-family:\0000333}}
+.test a:hover {
+  color: #eee;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/test_info\.scss}line{font-family:\0000337}}
+.test a .test-status {
+  display: block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/test_info\.scss}line{font-family:\0000341}}
+.test-info {
+  display: none;
+  position: absolute;
+  padding: 5px;
+  background: #222;
+  color: #fff;
+  width: 200px;
+  text-align: left;
+  left: -200px;
+  margin: -50px 0 0 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/test_info\.scss}line{font-family:\0000353}}
+.test:hover .test-info {
+  display: block;
+  z-index: 9999;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/test_info\.scss}line{font-family:\0000358}}
+.test:hover {
+  background-color: #323232 !important;
+  cursor: pointer;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/test_info\.scss}line{font-family:\0000363}}
+div.test {
+  display: inline-block;
+  font-size: 32px;
+  left: 85px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/test_info\.scss}line{font-family:\0000369}}
+div.test.unavailable {
+  color: #b20600;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/test_info\.scss}line{font-family:\0000373}}
+div.test.complete {
+  color: #8bc63f;
+}

@@ -1,0 +1,150 @@
+<form role="form">
+	<div class="form-header">
+    	<h2>Validate</label>
+	</div>
+	<div class="form-group">
+    	<label>Action Name:</label>
+    	<div class="row">
+    		<div class="col-xs-12">
+    			<input type="text" ng-model="Tests.Selected.Action.id" tooltip="Unique name of action"  tooltip-trigger="focus" tooltip-placement="left" class="form-control">
+    		</div>
+    	</div>
+	</div>
+
+    <div class="form-group">
+            <label>First Parameter:</label>
+            <div class="row">
+                <div class="col-xs-12">
+                    <select class="form-control" ng-model="Tests.Selected.Action.params.firstParameter" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Parameter for validation"  tooltip-trigger="focus" tooltip-placement="left">
+                        <option value="">-- choose first parameter --</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Get -->
+        <div class="form-group">
+            <label>Keys:</label>
+            <div class="row">
+                <div class="col-xs-12">
+                    <p class="input-group">
+                        <input type="text" ng-model="Tests.Temp.objKey.key" tooltip="Key in object" ng-show="!Tests.Temp.objKey.isParam" tooltip-trigger="focus" tooltip-placement="left" class="form-control" />
+                        <select class="form-control" ng-model="Tests.Temp.objKey.key" ng-show="Tests.Temp.objKey.isParam" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Parameter for object key"  tooltip-trigger="focus" tooltip-placement="left">
+                            <option value="">-- choose object parameter --</option>
+                        </select>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-primary" ng-model="Tests.Temp.objKey.isParam" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
+                                Is Variable
+                            </button>
+                            <button type="button" class="btn btn-success" ng-click="Tests.Functions.addKey(Tests.Selected.Action, Tests.Temp.objKey)"><i class="glyphicon glyphicon-plus"></i></button>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="row" ng-repeat="obj in Tests.Selected.Action.params.keys">
+                <div class="col-xs-12">
+                    <p class="input-group">
+                        <input type="text" ng-model="obj.key" tooltip="Key in object" ng-show="!obj.isParam" tooltip-trigger="focus" tooltip-placement="left" class="form-control" />
+                        <select class="form-control" ng-model="obj.key" ng-show="obj.isParam" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Parameter for object key"  tooltip-trigger="focus" tooltip-placement="left">
+                            <option value="">-- choose object parameter --</option>
+                        </select>
+                        <span class="input-group-btn">.
+                            <button type="button" class="btn btn-primary" ng-model="obj.isParam" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
+                                Is Variable
+                            </button>
+                            <button type="button" class="btn btn-danger" ng-click="Tests.Functions.removeKey(Tests.Selected.Action, obj)"><i class="glyphicon glyphicon-remove"></i></button>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+   <div class="form-group">
+        <label>Operation:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.operation" tooltip="Operation for validation"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose operation --</option>
+                    <option value="==">Equals</option>
+                    <option value="!=">Does Not Equal</option>
+                    <option value="<">Less Than</option>
+                    <option value=">">Greater Than</option>
+                    <option value="REGEX">Regex</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label ng-show="Tests.Selected.Action.params.operation != 'REGEX'">Second Parameter:</label>
+        <label ng-show="Tests.Selected.Action.params.operation == 'REGEX'">Regular Expresion Parameter:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.secondParameter" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Second Parameter for validation"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose second parameter --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Store Keys:</label>
+            <div class="row">
+                <div class="col-xs-12">
+                    <p class="input-group">
+                        <input type="text" ng-model="Tests.Temp.objStoreKey.key" tooltip="Key for store object" ng-show="!Tests.Temp.objStoreKey.isParam" tooltip-trigger="focus" tooltip-placement="left" class="form-control" />
+                        <select class="form-control" ng-model="Tests.Temp.objStoreKey.key" ng-show="Tests.Temp.objStoreKey.isParam" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Parameter for store object key"  tooltip-trigger="focus" tooltip-placement="left">
+                            <option value="">-- choose object parameter --</option>
+                        </select>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-primary" ng-model="Tests.Temp.objStoreKey.isParam" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
+                                Is Variable
+                            </button>
+                            <button type="button" class="btn btn-success" ng-click="Tests.Functions.addStoreKey(Tests.Selected.Action, Tests.Temp.objStoreKey)"><i class="glyphicon glyphicon-plus"></i></button>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="row" ng-repeat="obj in Tests.Selected.Action.params.storeKeys">
+                <div class="col-xs-12">
+                    <p class="input-group">
+                        <input type="text" ng-model="obj.key" tooltip="Key for store object" ng-show="!obj.isParam" tooltip-trigger="focus" tooltip-placement="left" class="form-control" />
+                        <select class="form-control" ng-model="obj.key" ng-show="obj.isParam" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Parameter for store object key"  tooltip-trigger="focus" tooltip-placement="left">
+                            <option value="">-- choose object parameter --</option>
+                        </select>
+                        <span class="input-group-btn">.
+                            <button type="button" class="btn btn-primary" ng-model="obj.isParam" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
+                                Is Variable
+                            </button>
+                            <button type="button" class="btn btn-danger" ng-click="Tests.Functions.removeStoreKey(Tests.Selected.Action, obj)"><i class="glyphicon glyphicon-remove"></i></button>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Success Action:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.nextAction" ng-change="Display.Functions.UpdateLines()" ng-options="action.id for action in Tests.AvailableActions | notNull: 'id' track by action.id" tooltip="Action when validation is successful"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose next action --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Failed Action:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.cancelAction" ng-change="Display.Functions.UpdateLines()" ng-options="action.id for action in Tests.AvailableActions | notNull: 'id' track by action.id" tooltip="Action when validation fails"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose cancel action --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</form>

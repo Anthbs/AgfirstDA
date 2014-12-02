@@ -1,0 +1,66 @@
+<div class="">
+	<div class="col-xs-12">
+	    <h1>BYO Test</h1>
+	</div>
+    <div class="col-xs-12">
+        <ul style="list-style-type: none;">
+            <li ng-repeat="test in Tests.AvailableTests | orderBy: 'id'" style="display: inline;">
+                <button class="btn btn-primary" ng-click="Tests.Functions.SelectTest(test);Display.Functions.UpdateLines();">{{test.id}}</button>
+            </li>
+        </ul>
+    </div>
+    <div class="col-xs-12">
+        <ul style="list-style-type: none;">
+            <li ng-repeat="action in Actions.AvailableActions" style="display: inline;">
+                <button class="btn" ng-click="Tests.Functions.AddAction(action);">{{action.id}}</button>
+            </li>
+        </ul>
+    </div>
+
+	<tabset justified="true">
+        <tab heading="Designer">
+	    	<div id="FlowChartSVG" class="fill">
+	    		<svg id="FlowChart" class="byo_test_svg" viewBox="0 0 1500 1500" preserveAspectRatio="xMidYMid meet">
+	    			<g byo-action ng-repeat="action in Tests.Selected.Test.actions" />
+                    <g action-connector ng-repeat="connector in Display.Connectors track by $index" />
+	    		</svg>
+	    	</div>
+        	<div class="byo_test_right">
+        		<div ng-if="Tests.Selected.Action != null" ng-include="'SMS/templates/' + Tests.Selected.Action.type + '.html'" scope="this"></div>
+
+        		<div>
+        			<div class="col-xs-12">
+    	    			<input type="text" ng-model="Tests.Selected.Test.id" tooltip="Test Name"  tooltip-trigger="focus" tooltip-placement="left" class="form-control" />
+        			</div>
+        			<div class="col-xs-12">
+                    	<button type="button" class="btn btn-success" style="width:100%" ng-click="Tests.Functions.SaveTest();">Save</button>
+                  	</div>
+        		</div>
+
+                <div>
+                    <div class="col-xs-12">
+                        <button type="button" class="btn btn-success" style="width:100%" ng-click="Tests.Functions.RunTest(Tests.Selected.Test);">Run</button>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="col-xs-12">
+                        <button type="button" class="btn btn-success" style="width:100%" ng-click="Display.Functions.DownloadSVG(Tests.Selected.Test);">Download SVG</button>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="col-xs-12">
+                        <button type="button" class="btn btn-success" style="width:100%" ng-click="SaveCurrentAction();">Save Selected Action</button>
+                    </div>
+                </div>
+        	</div>
+        </tab>
+        <tab heading="Code">
+        	<div class="byo_test_svg" style="height:90%">
+    			<textarea id="Code" class="byo_test_svg" ng-model="Tests.Selected.Test.code"></textarea>
+    		</div>
+        </tab>
+  </tabset>
+</div>
+

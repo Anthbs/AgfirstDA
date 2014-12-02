@@ -1,0 +1,107 @@
+//_application.layouts.scss
+
+.content-primary {
+	margin-top: $header-primary-height-min;
+	margin-left: $application-dashboard-sidebar-min;
+}
+
+.content-testarea {
+	margin-right: $application-testarea-sidebar-min;
+}
+
+.content-primary header {
+	border-bottom: 1px solid #ccc;
+}
+
+.content-primary h1 {
+	font-size: 22px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #777;
+	margin: 2px 0 0 0;
+	height: ($header-primary-height-min - 3);
+	padding-left: 15px;
+	line-height: $header-primary-height-min;
+}
+
+.content-primary .single-entry-form {
+	padding-top: 6em;
+	padding-bottom: 6em;
+	background: #eee;
+}
+
+// Dashboard
+
+#dashboard .dashboard-links {
+	list-style: none;
+}
+
+.dashboard-panel {
+	padding: 10px;
+	//background: #bababa;
+}
+
+.dashboard-links li {
+	padding: 0;
+	color: #666;
+}
+
+#dashboard .dashboard-links a {
+	color: #666;
+	text-decoration: none;
+}
+
+#dashboard .dashboard-links a:hover {
+	background: #fff;
+}
+
+#dashboard .dashboard-links header {
+	padding: 5px;
+}
+
+#dashboard .dashboard-links h1 {
+	margin: 0;
+	font-size: 32px;
+	font-weight: bold;
+	color: #333;
+}
+
+#dashboard .dashboard-links h1 span {
+}
+
+.dashboard-links aside {
+	padding: 10px;
+}
+
+.dashboard-links aside span {
+	color: #666;
+	display: block;
+	text-align: right;
+}
+
+
+@media (min-width: 767px) {
+	.content-primary {
+
+	}
+}
+
+@media (min-width: 979px) {
+	.content-primary {
+		margin-top: $header-primary-height-max;
+		margin-left: $application-dashboard-sidebar-max;
+	}
+
+	.content-testarea {
+		margin-right: $application-testarea-sidebar-max;
+	}
+
+	.content-primary header {
+	}
+
+	.content-primary h1 {
+		font-size: 36px;
+		height: ($header-primary-height-max - 3);
+		line-height: $header-primary-height-max;
+	}
+}

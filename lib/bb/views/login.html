@@ -1,0 +1,59 @@
+<section id="login" class="login bg-dark">
+	<div class="login-inner">
+<div class="login-content row">
+		<header>
+			<span class="logo"></span>
+			<h1 class="brand text-center title-alternate">Sign In</h1>
+		</header>
+
+		<!-- Simple Login -->
+		<form class="row" ng-show="Context.IsSimpleLogin">
+			<div class="form-group col-xs-12">
+				<select class="form-control" ng-model="Context.User.id" ng-options="user.id as user.name for user in Context.UserList">
+					<option value="">-- select user --</option>
+				</select>
+			</div>
+			<div class="form-group col-xs-12">
+				<input type="password" class="form-control" placeholder="Pin Code" ng-model="Context.User.pin" required>
+			</div>
+			<div class="form-group col-xs-6">
+				<button class="btn btn-primary btn-block col-xs-6" type="button" ng-click="login();">Sign in</button>
+			</div>
+			<div class="form-group col-xs-6">
+				<button class="btn btn-configure btn-block col-xs-6" type="button" ng-click="configure();">Configure</button>
+			</div>
+		</form>
+
+		<!-- Complex Login -->
+		<form class="row" ng-show="!Context.IsSimpleLogin" role="form">
+			<div class="form-group col-xs-12">
+				<input type="text" class="form-control" placeholder="Email" ng-model="Context.User.name" required autofocus autocomplete="on">
+			</div>
+			<div class="form-group col-xs-12">
+				<input type="password" class="form-control" placeholder="Password" ng-model="Context.User.password" required autocomplete="on">
+			</div>
+			<div class="form-group col-xs-6">
+				<button class="btn btn-primary btn-block col-xs-6" type="button" ng-click="login();">Sign in</button>
+			</div>
+			<div class="form-group col-xs-6">
+				<button class="btn btn-configure btn-block col-xs-6" type="button" ng-click="configure();">Configure</button>
+			</div>
+		</form>
+
+		<div class="text-center row" ng-if="Context.Message.length > 0">{{Context.Message}} (Attempt: {{Context.Attempts}})</div>
+
+		<div class="device-calibration-icons">
+			<ul id="device-calibration-status">
+				<li class="app-icon"><p>S</p></li>
+				<li class="app-icon calibrated"><p>P</p></li>
+			</ul>
+		</div>
+
+</div>
+
+
+
+
+		</div>
+	</div>
+</section>

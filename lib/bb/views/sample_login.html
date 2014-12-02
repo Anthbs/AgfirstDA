@@ -1,0 +1,119 @@
+
+<div class="row">
+	<section id="dashboard" role="dashboard">
+		<header>
+			<h1>Sample Login</h1>
+		</header>
+		<div class="col-md-12">
+
+				<div class="col-sm-12 col-md-5 col-lg-5 boxed shadow-box">
+					<form role="form" class="form-inline">
+						<h4>Sample Details</h4>
+						<br>
+						<div class="row samplogform">
+							<div class="form-group col-lg-4">
+								<label>Sample #</label><br>													
+								<input type="text" ng-model="sample" placeholder="{{sample}}">	
+
+							</div>
+
+							<div class="form-group col-lg-7">
+								<label>Grower #</label><br>					
+								<input class="input" id="growernum" placeholder="Grower#">
+							</div>
+						</div>
+						<div class="row samplogform">
+							<div class="form-group col-lg-4">
+								<label>Area</label><br>
+								<input class="input" id="areanum" placeholder="Area #">
+							</div>
+							<div class="form-group col-lg-4 ">						
+								<label>Blocks</label><br>
+								<input class="input" id="blocks" placeholder="Blocks(1,2)">
+							</div>
+						</div>
+						<div class="row samplogform" style="height:100px">
+							<div class="form-group col-lg-4">
+								<label>Variety</label><br>
+								<input class="input" id="variety" placeholder="Variety">
+							</div>
+							<div class="form-group col-lg-4">
+							</div>
+						</div>					
+					</form>
+				</div>							
+				<div class="col-sm-12 col-md-4 col-md-offset-1 col-lg-5 col-lg-offset-1 boxed shadow-box">
+					<form role="form" class="form-inline">
+							<h4>Collection Details</h4>
+							<br>
+							<div class="row samplogform">
+								<div class="form-group ">
+									<label>Collection Date Time</label><br>													
+									<input class="input" id="coldate" placeholder="05-Nov-1605">&nbsp;
+									<input class="input" id="coltime" placeholder="13:05">
+								</div>
+
+							</div>
+							<div class="row samplogform">
+								<div class="form-group col-lg-4">
+									<label>Sampler</label><br>					
+									<select class="form-control"ng-model="Test.Context.User.name" ng-options="user.username as user.name for user in Test.Context.UserList">
+										<option value="">-- Guy Fawkes --</option>
+									</select>
+								</div>
+								<div class="form-group col-lg-4">
+									<label>Test Container</label><br>					
+									<select class="form-control" ng-model="hstep" placeholder="Red box" ng-options="opt for opt in options.hstep">
+										<option value="">-- Red box --</option>
+									</select>
+								</div>
+							</div>								
+						</form>
+				</div>
+					
+			</div>		
+		</div>
+		<div class="row">
+			<form role="form" class="form-inline" style="padding-top:150px">
+				<div class="col-lg-3">
+					<h4>Comments</h4><br>
+					<textarea class="form-control" rows="3" style="width:400px"></textarea>
+				</div>
+				<div class="col-lg-2"></div>
+				<div class="col-lg-3">
+					<h4># of Labels to Print</h4><br>
+					<input class="input" id="numlabels" placeholder="1" style="width:50px">
+				</div>
+			</form>
+		</div>
+			<div class="row" style="float:right;padding-right:150px">
+
+				<button class="btn btn-lg btn-primary bigtext" >Cancel Login</button>&nbsp;&nbsp;&nbsp;
+
+				<button class="btn btn-lg btn-primary bigtext" ng-click="Print()">Log Sample</button>
+			</div>
+		</div>	
+	</div>
+
+
+	<!--<div class="checkbox">
+							<label>
+								<input type="checkbox"> Check me out
+							</label>
+						</div>-->
+	<!--<button type="submit" class="btn btn-default">Submit</button>-->
+	<!--
+	<div class="row">
+	    <h1>Kiwifruit Test</h1>
+	</div>
+	<div class="row">
+		<input class="input" ng-enter="StartJobCommand();" id="jobcodeInput" type="text" ng-model="JobID">
+		<button class="btn" ng-class="KiwifruitJobFSM == null ? 'btn-primary' : 'btn-warning'" ng-click="StartJobCommand();">Start Job Command</button>
+		<input class="input" ng-enter="barcodeCommand();" id="barcodeInput" ng-model="Barcode">
+		<button class="btn" ng-class="KiwifruitJobFSM.BarcodePromise == null ? 'btn-warning' : 'btn-primary'" ng-click="barcodeCommand();">Read Value</button>
+		<ul style="padding: 0px;height:300px;" class="data-scroll" id="dataScroll" >
+		    <li class="list-group-item" ng-class-even="'evenRow'" ng-class-odd="'oddRow'" ng-repeat="fruit in FruitList">
+			{{fruit.fruit_id}} | {{fruit.fruit_value}}
+		    </li>
+		</ul>
+	</div> -->

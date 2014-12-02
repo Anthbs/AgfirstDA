@@ -1,0 +1,83 @@
+<form role="form">
+	<div class="form-header">
+    	<h2>State Machine</label>
+	</div>
+	<div class="form-group">
+    	<label>Action Name:</label>
+    	<div class="row">
+    		<div class="col-xs-12">
+    			<input type="text" ng-model="Tests.Selected.Action.id" tooltip="Unique name of action"  tooltip-trigger="focus" tooltip-placement="left" class="form-control">
+    		</div>
+    	</div>
+	</div>
+	
+    <div class="form-group">
+        <label>State Machine:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.machine" ng-options="test.id as test.id for test in Tests.AvailableTests" tooltip="State Machine to run"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose state machine --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group" style="height:150px; overflow-y:auto; overflow-x:hidden;">
+        <div class="row" style="margin:0px;">
+            <label>Initial Parameters:</label>
+            <button class="btn btn-primary" style="float: right;" ng-click="Tests.Functions.GetSMInitialParameters()">Refresh</button>
+        </div>
+        
+        <div class="row" ng-repeat="param in Tests.Selected.Action.params.SMParams">
+            <div class="col-xs-4">
+                <label>{{param.name}}:</label>
+            </div>
+            <div class="col-xs-8">
+                <p class="input-group">
+                    <input type="text" ng-model="param.value" tooltip="Key in object" ng-show="!param.isParam" tooltip-trigger="focus" tooltip-placement="left" class="form-control" />
+                    <select class="form-control" ng-model="param.key" ng-show="param.isParam" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Initial parameter for state machine" tooltip-trigger="focus" tooltip-placement="left">
+                        <option value="">-- choose object parameter --</option>
+                    </select>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-primary" ng-model="param.isParam" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
+                            Is Variable
+                        </button>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Result Parameter:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.resultParameter" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Parameter for state machine results"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose object parameter --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Success Action:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.nextAction" ng-change="Display.Functions.UpdateLines()" ng-options="action.id for action in Tests.AvailableActions | notNull: 'id' track by action.id" tooltip="Action when successfully completed"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose success action --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group" ng-show="Tests.Selected.Action.ReturnsBool">
+        <label>Failed Action:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.failedAction" ng-change="Display.Functions.UpdateLines()" ng-options="action.id for action in Tests.AvailableActions | notNull: 'id' track by action.id" tooltip="Action when unsuccessfully completed"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose failed action --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</form>

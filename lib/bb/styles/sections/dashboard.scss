@@ -1,0 +1,65 @@
+// dashboard.scss
+
+#dashboard {
+	
+}
+
+#dashboard .dashboard-links {
+	list-style: none;
+}
+
+.dashboard-panel {
+	padding: 10px;
+	//background: #bababa;
+}
+
+.dashboard-links li {
+	padding: 0;
+//	background: #78be20;
+	color: #666;
+//	border-left: 1px solid #666;
+//	border-right: 1px solid #a5a5a5;
+}
+
+.dashboard-links li:first-child {
+	border-left: 0;
+}
+
+.dashboard-links li:last-child {
+	border-right: 0;	
+}
+
+#dashboard .dashboard-links a {
+	color: #666;
+	text-decoration: none;
+}
+
+#dashboard .dashboard-links a:hover {
+	background: #fff;
+}
+
+#dashboard .dashboard-links header {
+	padding: 5px;
+//	background: #666;
+}
+
+#dashboard .dashboard-links h1 {
+	margin: 0;
+//	text-shadow: -1px -1px 1px rgba(126, 126, 126, 0.75);
+	font-size: 32px;
+	font-weight: bold;
+	color: #333;
+}
+
+#dashboard .dashboard-links h1 span {
+}
+
+.dashboard-links aside {
+	padding: 10px;
+}
+
+.dashboard-links aside span {
+	color: #666;
+	display: block;
+	text-align: right;
+}

@@ -1,0 +1,59 @@
+<form role="form">
+	<div class="form-header">
+    	<h2>Repeat</label>
+	</div>
+	<div class="form-group">
+    	<label>Action Name:</label>
+    	<div class="row">
+    		<div class="col-xs-12">
+    			<input type="text" ng-model="Tests.Selected.Action.id" tooltip="Unique name of action"  tooltip-trigger="focus" tooltip-placement="left" class="form-control">
+    		</div>
+    	</div>
+	</div>
+	
+  	
+
+    <div class="form-group">
+        <label>Repeat Times:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.repeatTimesParameter" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Parameter for how many times to repeat"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose repeat parameter --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Parameter:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.repeatParameter" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Parameter for storing repeat counter"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose repeat parameter --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Repeat To:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.repeatAction" ng-change="Display.Functions.UpdateLines()" ng-options="action.id for action in Tests.AvailableActions | notNull: 'id' track by action.id" tooltip="Next action on successful completion of this action"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose repeat action --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Next Action:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.nextAction" ng-change="Display.Functions.UpdateLines()" ng-options="action.id for action in Tests.AvailableActions | notNull: 'id' track by action.id" tooltip="Next action on successful completion of this action"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose next action --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</form>

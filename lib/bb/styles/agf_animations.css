@@ -1,0 +1,134 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/agf_animations\.scss}line{font-family:\000032}}
+[ui-view].ng-enter {
+  opacity: 1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/agf_animations\.scss}line{font-family:\000037}}
+[ui-view].ng-enter-active {
+  opacity: 1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/agf_animations\.scss}line{font-family:\0000311}}
+[ui-view].ng-leave {
+  opacity: 1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/agf_animations\.scss}line{font-family:\0000315}}
+[ui-view].ng-leave-active {
+  opacity: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/agf_animations\.scss}line{font-family:\0000319}}
+.loading-pulse {
+  -webkit-animation-duration: 3s;
+  -webkit-animation-name: inPulseOut;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(0.3, 0, 0.8, 1);
+  animation-timing-function: cubic-bezier(0.3, 0, 0.8, 1);
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-name: inPulseOut;
+  animation-name: inPulseOut;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@keyframes inPulseOut {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-150px);
+    transform: translateX(-150px);
+  }
+  10% {
+    opacity: 0;
+    -webkit-transform: translateX(-150px);
+    transform: translateX(-150px);
+  }
+  30% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  90% {
+    opacity: 0;
+    -webkit-transform: translateX(150px);
+    transform: translateX(150px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(150px);
+    transform: translateX(150px);
+  }
+}
+@-webkit-keyframes inPulseOut {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-150px);
+  }
+  10% {
+    opacity: 0;
+    -webkit-transform: translateX(-150px);
+  }
+  30% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.2, 1.2);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+  }
+  90% {
+    opacity: 0;
+    -webkit-transform: translateX(150px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(150px);
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes largerBtn {
+  from {
+    -webkit-transform: scale(1, 1);
+  }
+  to {
+    -webkit-transform: scale(1.1, 1.1);
+  }
+}
+@-webkit-keyframes largerBtnBackwards {
+  from {
+    -webkit-transform: scale(1.1, 1.1);
+  }
+  to {
+    -webkit-transform: scale(1, 1);
+  }
+}

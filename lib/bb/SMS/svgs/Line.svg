@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="lineSvg">
+<defs>
+  <marker id='head' orient="auto"
+    markerWidth='2' markerHeight='4'
+    refX='1.75' refY='2'>
+    <!-- triangle pointing right (+x) -->
+    <path d='M0,0 V4 L2,2 Z' fill="black"/>
+  </marker>
+</defs>
+
+<path class="lineSvg"
+  id='arrow-line'
+  marker-end='url(#head)'
+  stroke-width='5'
+  fill='none' stroke='{{connector.color}}'  
+  d='M0,0'
+  ng-attr-d="{{connector.path}}"
+  />
+
+</svg>

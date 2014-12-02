@@ -1,0 +1,15 @@
+<aside>
+	<dl class="hardware workstation-info">
+		<dt>
+			<dfn>Workstation Name</dfn>
+		</dt>
+		<dd>12</dd>
+	</dl>
+
+	<div class="devices_box">
+		<div ng-repeat="device in Devices" class="device" ng-class="{'calibration_required': device.calibration_required}">
+			<h4 class="text-center">{{device.type}}</h4>
+			<h4 class="text-center">{{device.model}}</h4>
+		</div>
+	</div>
+</aside>

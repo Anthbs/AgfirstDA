@@ -1,27 +1,168 @@
-<html>
+<!doctype html>
+<html class="no-js">
+
 <head>
-	
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-motion/dist/angular-motion.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/application.css">
+    <!-- endbuild -->
 </head>
-<body>
-	<script src="https://cdn.socket.io/socket.io-1.2.1.js"></script>
-	<script type="text/javascript">
-		var socket = io('http://localhost:3000');
-		socket.on('test', function(data) { 
-			console.log(data);
-			document.body.innerHTML += JSON.stringify(data) + "</br>";
-		});
-		socket.emit('Get_Value_Open', { com_port: 'COM4', event_name: 'test' });
-		var type = 1;
-		function changeType() {
-			if(type == 1) {
-				type = 2;
-				socket.emit('Change_Config', { com_port: 'COM4', type: 'Scale', model: 'AND_ANDG_ANGH' });
-			} else {
-				type = 1;
-				socket.emit('Change_Config', { com_port: 'COM4', type: 'Penetrometer', model: 'WEL' });
-			}
-		}
-	</script>
-	<button onclick="changeType()">Change Type</button>
+
+<body ng-app="netLabApp" class="{{bodylayout}}"  ng-scanner-detector>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div ui-view></div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-hotkeys/angular-hotkeys.js"></script>
+    <script src="bower_components/angular-hotkeys/angular-hotkeys.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/socket.io-client/socket.io.js"></script>
+    <script src="bower_components/sugar/release/sugar.min.js"></script>
+    <script src="bower_components/taffydb/taffy.js"></script>
+    <script src="bower_components/JavaScript-MD5/js/md5.js"></script>
+    <script src="bower_components/Snap.svg/dist/snap.svg-min.js"></script>
+    <script src="bower_components/PathFinding.js/pathfinding.js"></script>
+    <script src="bower_components/handlebars/handlebars.js"></script>
+    <script src="bower_components/js-beautify/js/lib/beautify.js"></script>
+    <script src="bower_components/js-beautify/js/lib/beautify-css.js"></script>
+    <script src="bower_components/js-beautify/js/lib/beautify-html.js"></script>
+    <script src="bower_components/angular-filter/dist/angular-filter.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-strap/dist/angular-strap.js"></script>
+    <script src="bower_components/angular-strap/dist/angular-strap.tpl.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/libraries.js -->
+    <!-- libs:js -->
+    <script src="scripts/libs/animate-plus.min.js"></script>
+    <script src="scripts/libs/handlebar_helpers.js"></script>
+    <script src="scripts/libs/CODE39.js"></script>
+    <script src="scripts/libs/DYMO.Label.Framework.1.2.6.js"></script>
+    <script src="scripts/libs/FileSaver.min.js"></script>
+    <script src="scripts/libs/JsBarcode.js"></script>
+    <script src="scripts/libs/jspdf.js"></script>
+    <script src="scripts/libs/jspdf.plugin.addimage.js"></script>
+    <script src="scripts/libs/jspdf.plugin.png_support.js"></script>
+    <script src="scripts/libs/moment.min.js"></script>
+    <script src="scripts/libs/png.js"></script>
+    <script src="scripts/libs/zlib.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/loading.js"></script>
+    <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/station_info.js"></script>
+    <script src="scripts/controllers/scan_sample.js"></script>
+    <script src="scripts/controllers/test_info.js"></script>
+    <!-- Application Controllers -->
+    <script src="scripts/controllers/application/application.sidebar.js"></script>
+    <script src="scripts/controllers/application/application.dashboard.js"></script>
+
+    <script src="scripts/directives/ngscannerdetector.js"></script>
+    <script src="scripts/directives/showcurrenttime.js"></script>
+
+    <script src="scripts/services/device.js"></script>
+    <script src="scripts/services/socketio.js"></script>
+    <script src="scripts/services/$api.js"></script>
+    <script src="scripts/services/$print.js"></script>
+    <script src="scripts/controllers/sample_login.js"></script>
+    <script src="scripts/controllers/bulkweight.js"></script>
+    <script src="scripts/controllers/freshweight.js"></script>
+    <script src="scripts/directives/byoaction.js"></script>
+    <script src="scripts/directives/actionconnector.js"></script>
+    <script src="scripts/controllers/actions.js"></script>
+    <script src="scripts/controllers/byotest.js"></script>
+    <script src="scripts/controllers/display.js"></script>
+    <script src="scripts/controllers/tests.js"></script>
+    <script src="scripts/services/test.js"></script>
+    <script src="scripts/services/action.js"></script>
+    <script src="scripts/services/apiservice.js"></script>
+    <script src="scripts/services/basefsm.js"></script>
+    <script src="scripts/services/modalservice.js"></script>
+    <script src="scripts/controllers/modaltemplate.js"></script>
+    <script src="scripts/controllers/modalresult.js"></script>
+    <script src="scripts/controllers/modalinput.js"></script>
+    <script src="scripts/services/statemachine.js"></script>
+    <script src="scripts/services/storageservice.js"></script>
+    <script src="scripts/filters/bytypes.js"></script>
+    <script src="scripts/filters/notnull.js"></script>
+    <script src="scripts/directives/ngautofocus.js"></script>
+    <script src="scripts/controllers/chromametercalibration.js"></script>
+    <script src="scripts/controllers/chromametermulticalibration.js"></script>
+    <script src="scripts/controllers/devicesetup.js"></script>
+    <script src="scripts/controllers/workstation/workstation.configure.js"></script>
+    <script src="scripts/controllers\brix.js"></script>
+    <script src="scripts/controllers\dryout.js"></script>
+    <script src="scripts/controllers\dryin.js"></script>
+    <script src="scripts/controllers\colour.js"></script>
+    <script src="scripts/controllers\pressure.js"></script>
+    <script src="scripts/services\basetest.js"></script>
+    <!-- endbuild -->
 </body>
+
 </html>

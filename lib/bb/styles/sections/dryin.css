@@ -1,0 +1,29 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/dryin\.scss}line{font-family:\000031}}
+#test-details {
+  padding: 55px 5px 10px 25px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/dryin\.scss}line{font-family:\000035}}
+#test-details textarea {
+  height: 80px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/dryin\.scss}line{font-family:\000039}}
+#test-measures {
+  text-align: center;
+  padding: 0 25px 10px 5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/dryin\.scss}line{font-family:\0000314}}
+#container-selector {
+  margin: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/dryin\.scss}line{font-family:\0000318}}
+#container-items {
+  width: 100%;
+  margin: 0 10px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}

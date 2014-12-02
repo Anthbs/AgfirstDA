@@ -1,0 +1,24 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/bulk_weight\.scss}line{font-family:\000033}}
+.input {
+  height: 100px;
+  outline: none;
+  transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/bulk_weight\.scss}line{font-family:\0000310}}
+.clear-top {
+  padding-top: 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/bulk_weight\.scss}line{font-family:\0000313}}
+.button {
+  padding-top: 100px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Anthony\/Desktop\/BlackBox\/app\/styles\/sections\/bulk_weight\.scss}line{font-family:\0000316}}
+.fin {
+  height: 50px;
+  width: 200px;
+}

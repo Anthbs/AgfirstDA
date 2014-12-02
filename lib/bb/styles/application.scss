@@ -1,0 +1,43 @@
+// Application SCSS File
+//
+// This file is used as the application over ride list of SCSS files to over ride the
+// Bower installed Bootstrap SCSS set of files.  This allows us to set application level
+// CSS styles without modifying any of the bower bootstrap office core SCSS files.  
+//
+// Each of the below files require an @import statement to bower bootstrap official file location
+
+
+// Core variables and mixins
+@import "libraries/variables";
+@import "libraries/mixins";
+
+// Reset and dependencies
+@import "components/normalize";
+@import "components/print";
+@import "components/glyphicons";
+
+// Core CSS
+@import "components/scaffolding";
+@import "components/type";
+@import "components/code";
+@import "components/grid";
+@import "components/tables";
+@import "components/forms";
+@import "components/buttons";
+@import "components/modals";
+
+// Components
+@import "components/navbar";
+// The below are remaining Components which have not been over ridden
+@import "vendor/bootstrap/_components";
+
+@import "components/application.globals";
+@import "components/application.layouts";
+@import "components/application.sidebar";
+@import "components/application.icons";
+@import "components/application.hardware";
+
+@import "agf_animations";
+@import "scan_sample";
+@import "main";
+

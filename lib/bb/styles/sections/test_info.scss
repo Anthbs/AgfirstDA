@@ -1,0 +1,75 @@
+#sample-tests {
+	padding: 0;
+}
+
+.unavailable {
+	background-color: rgba(128,128,128,.5) !important;
+}
+
+.complete {
+	background-color: rgba(139,198,63,1) !important;
+}
+
+.current {
+	background-color: rgba(255,255,0,.5) !important;
+}
+
+.test {
+	display: inline-block;
+	background-color: rgba(255,255,255,1);
+	width: 100%;
+	margin:0;
+}
+
+.test a {
+	text-decoration: none;
+	color: #666;
+	padding: 5px;
+	display: block;
+	width: 100%;
+	position: relative;
+}
+
+.test a:hover {
+	color: #eee;
+}
+
+.test a .test-status {
+	display:block;
+}
+
+.test-info {
+	display: none;
+	position: absolute;
+	padding: 5px;
+	background: #222;
+	color: #fff;
+	width: 200px;
+	text-align: left;
+	left: -200px;
+	margin: -50px 0 0 0;
+}
+
+.test:hover .test-info {
+	display: block;
+	z-index: 9999;
+}
+
+.test:hover {
+	background-color: rgba(50, 50, 50, 1) !important;
+	cursor: pointer;
+}
+
+div.test {
+	display: inline-block;
+	font-size: 32px;
+	left: 85px;
+}
+
+div.test.unavailable  {
+	color: rgba(178,6,0,1);
+}
+
+div.test.complete  {
+	color: rgba(139,198,63,1);
+}

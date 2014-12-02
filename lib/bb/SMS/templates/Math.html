@@ -1,0 +1,75 @@
+<form role="form">
+	<div class="form-header">
+    	<h2>Math</label>
+	</div>
+	<div class="form-group">
+    	<label>Action Name:</label>
+    	<div class="row">
+    		<div class="col-xs-12">
+    			<input type="text" ng-model="Tests.Selected.Action.id" tooltip="Unique name of action"  tooltip-trigger="focus" tooltip-placement="left" class="form-control">
+    		</div>
+    	</div>
+	</div>
+	
+    <div class="form-group">
+        <label>First Parameter:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.firstParam" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="First parameter for operation"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose first parameter --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Operation:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.operation" tooltip="Operation to apply to the first and second parameter"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose operation --</option>
+                    <option value="+">Add</option>
+                    <option value="-">Subtract</option>
+                    <option value="*">Multiply</option>
+                    <option value="/">Divide</option>
+                    <option value="%">Modulus</option>
+                    <option value="&">AND</option>
+                    <option value="|">OR</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Second Parameter:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.secondParam" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Second parameter for operation"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose second parameter --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Save In Parameter:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.saveParam" ng-options="parameter for parameter in Tests.AvailableParameters" tooltip="Parameter for saving the result of the operation"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose save parameter --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Next Action:</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <select class="form-control" ng-model="Tests.Selected.Action.params.nextAction" ng-change="Display.Functions.UpdateLines()" ng-options="action.id for action in Tests.AvailableActions | notNull: 'id' track by action.id" tooltip="Next action on successful completion of this action"  tooltip-trigger="focus" tooltip-placement="left">
+                    <option value="">-- choose next action --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</form>

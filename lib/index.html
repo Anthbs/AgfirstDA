@@ -3,9 +3,7 @@
 <head>
 	<script>
 		function bodyOnLoad(){
-			var agfirstda = require('./agfirstda.js');			
-			agfirstda.setup();
-			window.location.assign('http://localhost:8081/index.html');
+			setTimeout(function() { window.location.assign('http://localhost:8081'); }, 2000)
 		}
 	</script>
 </head>

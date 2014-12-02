@@ -1,0 +1,157 @@
+// _application.sidebar.scss
+
+$sidebar-width-small:					50px;
+$sidebar-width-medium:					100px;
+$sidebar-width-large:					175px;
+$sidebar-margin-shift:					($grid_gutter_width / 2);
+
+#dashboard-sidebar {
+	width: $sidebar-width-small;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: block;
+    margin-top: ($header-primary-height-min + $body-top-border); /* $body-top-border for offset */
+    border-right: 1px solid #ccc;
+}
+
+#dashboard-sidebar ul {
+	margin-top: ($header-primary-height-min - 1); /* -1 to account for bottom border */;
+}
+
+.sidebar {
+	background-color: #ddd;
+}
+
+// Specific Sidebar links (i.e. Configuration button etc)
+
+#dashboard-sidebar .affix-bottom {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: rgba(25,25,25,0.05);
+	border-top: 1px solid rgba(25,25,25,0.15);
+	margin:0;
+	padding:10px;
+}
+
+.sidebar a {
+	color: #666;
+}
+
+#dashboard-sidebar .nav {
+	width: $application-dashboard-sidebar-min;
+}
+
+#dashboard-sidebar .nav li {
+	text-align: center;
+	width: 100%;
+	margin: 0;
+	border-bottom: 1px solid #ccc;
+}
+
+#dashboard-sidebar .nav li:first-child {
+	border-top: 1px solid #ccc;
+}
+
+#dashboard-sidebar .nav > li > a {
+	padding: 10px 0;
+}
+
+#dashboard-sidebar .nav > li > a:hover {
+	background: $global-body-bg;
+}
+
+.sidebar .nav .glyphicon {
+	font-size: 28px;
+	display: block;
+	text-align: center;
+}
+
+// Tests sidebar
+
+.sidebar-testinfo {
+	position: fixed;
+	margin-right: 0;
+	right: 0;
+	background: #eee;
+	width: $application-testarea-sidebar-min;
+	//padding-top: ($header-primary-height-min + $body-top-border);
+	height: 100%;
+	border-left: 1px solid #ddd;
+	z-index:10;
+}
+
+#test-info-items {
+	list-style: none;
+	padding:0;
+	margin-top: $header-primary-height-min;
+}
+
+// Being Media queries for size increase
+
+.sidebar-testinfo .devices_box {
+	padding: 5px;
+	height: $header-primary-height-min;
+	//background: #999;
+}
+
+.sidebar-testinfo .devices_box h1 {
+	margin-top: 0;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+@media (min-width: 768px) {
+
+	.sidebar .nav {
+		//width: $sidebar-width-medium;
+	}
+
+	.sidebar-testinfo {
+	}
+
+}
+
+@media (min-width: 979px) {
+
+	#dashboard-sidebar {
+		margin-top: ($header-primary-height-max + $body-top-border);
+	}
+
+ 	#dashboard-sidebar ul {
+ 		margin-top: ($header-primary-height-max - 1); /* -1 to account for bottom border */
+ 	}
+
+	#dashboard-sidebar, #dashboard-sidebar .nav {
+		width: $application-dashboard-sidebar-max;
+	}
+
+	#dashboard-sidebar .nav li a {
+		font-weight: bold;
+		text-transform: uppercase;
+		padding: 15px 0;
+		color: #999;
+	}
+
+	#dashboard-sidebar .nav .glyphicon {
+		font-size: 46px;
+		//display: inline;
+		margin-bottom: 10px;
+	}
+
+	.sidebar-testinfo {
+		width: $application-testarea-sidebar-max;
+		//padding-top: ($header-primary-height-max + $body-top-border);
+	}
+
+	.sidebar-testinfo .devices_box {
+		height: $header-primary-height-max;
+	}
+
+	#test-info-items {
+		margin-top: $header-primary-height-max;
+	}
+}
